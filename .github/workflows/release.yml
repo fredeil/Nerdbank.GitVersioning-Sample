@@ -20,6 +20,6 @@ jobs:
       run: |
            for f in ./Artifacts/Release/*.nupkg
            do
-             curl -vX PUT -u "fredeil:${{ secrets.GHPackagesToken }}" -F package=@$f https://nuget.pkg.github.com/fredeil/
+             curl -vX PUT -u "fredeil:${{ secrets.GITHUB_TOKEN }}" -F package=@$f https://nuget.pkg.github.com/fredeil/
            done
       shell: bash
