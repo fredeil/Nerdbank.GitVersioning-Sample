@@ -17,4 +17,9 @@ jobs:
       run: dotnet pack -c Release
       
     - name: Deploy NuGet packages to GitHub packages
-      run: dotnet nuget push ./Artifacts/Release/*.nupkg -k ${{secrets.GITHUB_TOKEN}} -s https://nuget.pkg.github.com/fredeil/index.json
+      run: |
+           for f in ./Artifacts/Release/*.nupkg
+           do
+             curl -vX PUT -u "fredeil:${{ secrets.GHPackagesToken }}" -F package=@$f https://nuget.pkg.github.com/fredeil/
+           done
+      shell: bash
