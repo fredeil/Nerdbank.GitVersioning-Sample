@@ -8,6 +8,8 @@
     <Company>Company</Company>
     <Product>Company utilities</Product>
     <Copyright>© Company. All rights reserved.</Copyright>
+    <Summary>Super duper package for doing everything</Summary>
+    <Description>Super duper package for doing everything</Description>
     <PackageProjectUrl>https://github.com/fredeil/Nerdbank.GitVersioning-Sample</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
