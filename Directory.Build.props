@@ -1,9 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup>
+<Project>
+
+    <!-- Packaging -->
+  <PropertyGroup>
+    <Owner>Company</Owner>
+    <Authors>Developers</Authors>
+    <Company>Company</Company>
+    <Product>Company utilities</Product>
+    <Copyright>© Company. All rights reserved.</Copyright>
+    <PackageProjectUrl>https://github.com/fredeil/Nerdbank.GitVersioning-Sample</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <IncludeSource>true</IncludeSource>
+    <DebugSymbols>true</DebugSymbols>
+    <SymbolPackageFormat>symbols.nupkg</SymbolPackageFormat>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedAllSources>true</EmbedAllSources>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+  </PropertyGroup>
+
+  <!-- Common compile parameters -->
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <GenerateDocumentationFile Condition="'$(Configuration)'=='Release'">true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591;FS2003</NoWarn>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+  <!-- Set output folder for created NuGet packages -->
+  <PropertyGroup>
+    <PackageOutputPath Condition=" '$(PackageOutputPath)'=='' ">$(MSBuildThisFileDirectory)\Artifacts\$(Configuration)</PackageOutputPath>
+  </PropertyGroup>
+
+  <!-- SourceLink -->
+<ItemGroup Condition="$(IsPackable) == 'true'">
     <PackageReference Include="Nerdbank.GitVersioning">
       <Version>3.0.28</Version>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
   </ItemGroup>
+
 </Project>
