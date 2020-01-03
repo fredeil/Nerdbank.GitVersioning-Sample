@@ -3,8 +3,8 @@
 
     <!-- Packaging -->
   <PropertyGroup>
-    <Owner>Company</Owner>
-    <Authors>Developers</Authors>
+    <Owner>fredeil</Owner>
+    <Authors>fredeil</Authors>
     <Company>Company</Company>
     <Product>Company utilities</Product>
     <Copyright>© Company. All rights reserved.</Copyright>
