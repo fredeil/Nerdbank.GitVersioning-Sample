@@ -1,7 +1,6 @@
 # Nerdbank.GitVersioning-Sample
 
-A sample of how easy it is to adopt Nerdbank.GitVersioning to solve your versioning problems. 
-This example also shows how to enable symbols and GitHub sourcelinking to your NuGet package.
+A sample of how easy it is to adopt Nerdbank.GitVersioning to solve your versioning problems. The sample also includes how to enable GitHub sourcelinking and how to build symbols. It also uses GitHub actions for building and deploying to GitHub packages registry. 
 
 ## Create the NuGet
 
@@ -18,6 +17,9 @@ You can use https://github.com/NuGetPackageExplorer/NuGetPackageExplorer to expl
 
 ![Screenshot from NuGet package explorer](nugetExplorer.PNG)
 
+## Build and deploy
+
+This example also uses GitHub actions and GitHub packages. See [./github/workflows](./github/workflows) for reference.
 
 ## Useful links
 
