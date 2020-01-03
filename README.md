@@ -16,6 +16,8 @@ The published NuGet package and its symbols will be under `Artifacts/Release`
 
 You can use https://github.com/NuGetPackageExplorer/NuGetPackageExplorer to explore the NuGet package. 
 
+![Screenshot from NuGet package explorer](nugetExplorer.PNG)
+
 
 ## Useful links
 
