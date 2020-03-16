@@ -1,0 +1,25 @@
+name: Pack and release
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 2.2.108
+    - name: Build with dotnet
+      run: dotnet pack -c Release
+      
+    - name: Deploy NuGet packages to GitHub packages
+      run: |
+           for f in ./Artifacts/Release/*.nupkg
+           do
+             curl -vX PUT -u "fredeil:${{ secrets.GITHUB_TOKEN }}" -F package=@$f https://nuget.pkg.github.com/fredeil/
+           done
+      shell: bash
